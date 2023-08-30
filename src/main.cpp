@@ -32,21 +32,15 @@ void loop() {
   };
 
   int cnt = 0;
-  for(int i = 0; i < 2; i++) {
-    for(int j = 0; j < 2; j++) {
-      for(int k = 0; k < 2; k++) {
-        for(int l = 0; l < 2; l++) {
-          int mode = 0;
-          digitalWrite(MuxPins[0],MuxCode[mode][cnt][0]);
-          digitalWrite(MuxPins[1],MuxCode[mode][cnt][1]);
-          digitalWrite(MuxPins[2],MuxCode[mode][cnt][2]);
-          digitalWrite(MuxPins[3],MuxCode[mode][cnt][3]);
-          Serial.print(analogRead(LineOUT[mode]) > 900);
-          Serial.print(" ");
-          cnt++;
-        }
-      }
-    }
+  for(int i = 0; i < 16; i++) {
+    int mode = 1;
+    digitalWrite(MuxPins[4*mode],MuxCode[mode][cnt][0]);
+    digitalWrite(MuxPins[4*mode+1],MuxCode[mode][cnt][1]);
+    digitalWrite(MuxPins[4*mode+2],MuxCode[mode][cnt][2]);
+    digitalWrite(MuxPins[4*mode+3],MuxCode[mode][cnt][3]);
+    Serial.print(analogRead(LineOUT[mode]) > 900);
+    Serial.print(" ");
+    cnt++;
   }
   Serial.println("");
 }
