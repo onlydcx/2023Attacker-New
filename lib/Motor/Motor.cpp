@@ -34,7 +34,6 @@ void Motor::roll(int num, int power) {
 }
 
 void Motor::stop() {
-
 }
 
 void Motor::free() {
