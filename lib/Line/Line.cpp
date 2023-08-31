@@ -1,9 +1,8 @@
 #include "Arduino.h"
 #include "Line.h"
 
-int MuxPins[8] = {13,16,20,21,32,33,10,17};
-int LineOUT[2] = {11,10};
-
+const int MuxPins[8] = {13,16,20,21,32,33,10,17};
+const int LineOUT[2] = {11,10};
 const int LineMuxID[2][16][4] = {
     {
         {0,0,0,0},{1,0,0,0},{0,1,0,0},{1,1,0,0},
@@ -20,11 +19,11 @@ const int LineMuxID[2][16][4] = {
 };
 
 Line::Line() {
-  for(int i = 0; i < 8; i++) {
-    pinMode(MuxPins[i],OUTPUT);
-  }
-  pinMode(LineOUT[0],INPUT);
-  pinMode(LineOUT[1],INPUT);
+    for(int i = 0; i < 8; i++) {
+        pinMode(MuxPins[i],OUTPUT);
+    }
+    pinMode(LineOUT[0],INPUT);
+    pinMode(LineOUT[1],INPUT);
 }
 
 void Line::check() {

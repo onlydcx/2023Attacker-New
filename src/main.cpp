@@ -6,8 +6,8 @@ Motor motor;
 Line line;
 
 void setup() {
-  Serial.begin(9600);
-  
+   Serial.begin(9600);
+   motor.sleep();
 }
 
 void loop() {
