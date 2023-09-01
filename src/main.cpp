@@ -12,17 +12,13 @@ void setup() {
 
 void loop() {
    line.check();
-   Serial.println(isOnLine);
-   // Serial.println(line.check());
-   // motor.run(225);
+   // Serial.println(isOnLine);
 
    if(isOnLine) {
       motor.run(avoidAngle);
+      Serial.println(avoidAngle);
    }
    else {
-      motor.stop();
+      motor.sleep();
    }
-
-   // Serial.println(avoidAngle);
-   // delay(10);
 }
