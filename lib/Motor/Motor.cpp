@@ -23,7 +23,7 @@ void Motor::run(int angle) {
    while(angle >= 360) angle -= 360;
    while(angle < 0) angle += 360;
    for(int i = 0; i < 4; i++) {
-      MPwrVector[i] = -sin((angle - MotorAngle[i]) * (PI / 180));
+      MPwrVector[i] = sin((angle - MotorAngle[i]) * (PI / 180));
       if(MPwrMax < MPwrVector[i]) MPwrMax = MPwrVector[i];
    }
    if(MPwrMax < 1) {
