@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include "Motor.h"
 #include "Line.h"
+#include <Wire.h>
 
 // Motor motor;
 // Line line;
@@ -13,6 +14,7 @@ int mux[16][4] = {
 };
 
 void setup() {
+   // Wire.begin();
    Serial.begin(9600);
    // motor.sleep();
    // pinMode(26,OUTPUT);
@@ -20,13 +22,6 @@ void setup() {
    pinMode(30,OUTPUT);
    pinMode(29,OUTPUT);
    pinMode(28,OUTPUT);
-   pinMode(27,INPUT);
-   // pinMode(13,INPUT);
-   // digitalWrite(26,LOW);
-   // delay(500);
-   // digitalWrite(26,HIGH);
-   // delay(200);
-   // digitalWrite(26,LOW);
 }
 
 void loop() {
@@ -44,7 +39,7 @@ void loop() {
       Serial.print(" ");
    }
    Serial.println("");
-
+   delay(10);
 
    // Serial.println(analogRead(A10));
    // line.check();
@@ -57,4 +52,3 @@ void loop() {
    // //    motor.stop();
    // // }
 }
- 
